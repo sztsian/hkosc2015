@@ -1,5 +1,4 @@
 \documentclass{beamer}
-% Author: Alick Zhao <alick9188@gmail.com>
 % Author: Zamir SUN <zsun@fedoraproject.org>
 
 % This file is modified from a solution template for:
@@ -42,10 +41,11 @@
 
 \usepackage{hyperxmp}
 \hypersetup{
-pdfauthor={Alick Zhao, Zamir SUN},
-pdfcopyright={Copyright (C) 2014 by Alick Zhao and Zamir SUN.
+pdfauthor={Zamir SUN},
+pdfcopyright={Copyright (C) 2014 by Zamir SUN.
 Licensed under CC-BY-SA 4.0. Some rights reserved.
-This work is based on Matthew Miller's previous work.
+This work is based on Matthew Miller's previous work
+as well as Alick Zhao & Zamir SUN's previous slides.
 You need to follow the logo usage guideline to use the Fedora logo.},
 pdflicenseurl={http://creativecommons.org/licenses/by-sa/4.0/},
 }
@@ -66,24 +66,24 @@ ItalicFont={AR PL UKai CN}]{AR PL UMing CN}
 \newcommand*{\heiti}{\CJKfamily{zhhei}}   % 黑体
 \newcommand*{\kaishu}{\CJKfamily{zhkai}}  % 楷书
 
-\title{What's New in Fedora?}
+\title[Building Distribution in the Cloud Era]{Fedora.next: Building Distribution in the Cloud Era}
 
-\author[alick \& zsun] % (optional, use only with lots of authors)
-{Alick Zhao and Zamir SUN\\ \texttt{\{alick,zsun\}@fedoraproject.org}}
+\author[Zamir] % (optional, use only with lots of authors)
+{Zamir SUN\\ \texttt{zsun@fedoraproject.org}}
 
-\date[Fedora 21 Release Party] % (optional)
-{Jan 24, 2015}
+\date[HKOSCon 2015] % (optional)
+{June 26, 2015}
 
 \subject{Fedora, Fedora.next}
 
 % Delete this, if you do not want the table of contents to pop up at
 % the beginning of each subsection:
-\AtBeginSection[]
-{
-  \begin{frame}<beamer>{Outline}
-    \tableofcontents[currentsection]
-  \end{frame}
-}
+%\AtBeginSection[]
+%{
+%  \begin{frame}<beamer>{Outline}
+%    \tableofcontents[currentsection]
+%  \end{frame}
+%}
 
 % If you wish to uncover everything in a step-wise fashion, uncomment
 % the following command:
@@ -122,26 +122,6 @@ breaklinks=false,
 \section{Introduction}
 
 \include{self-introduction}
-%\begin{frame}{About Me}
-%  \begin{columns}
-%    \begin{column}{.75\textwidth}
-%  \begin{itemize}
-%    \item Master student
-%    \item Linux hobbyist
-%    \item Fedora contributor
-%    \item TUNA member
-%    \item ID: alick, alick9188
-%    \item Email: \texttt{alick@fedoraproject.org}
-%  \end{itemize}
-%    \end{column}
-%    \begin{column}{.25\textwidth}
-%      \begin{figure}[htbp]
-%        \centering
-%        \includegraphics[width=.6\textwidth]{wu.jpg}
-%      \end{figure}
-%    \end{column}
-%  \end{columns}
-%\end{frame}
 
 \begin{frame}{Fedora in a Nutshell}
   \begin{columns}
@@ -153,8 +133,8 @@ breaklinks=false,
         \item Sponsored by Red Hat
         \item Upstream to RHEL, CentOS
       \end{itemize}
-    \item 20 releases in 10 years
     \item Fedora 21 as the first release of Fedora.Next
+    \item Fedora 22 released last months
   \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
@@ -184,23 +164,67 @@ breaklinks=false,
 \end{frame}
 
 \section{Fedora.next Proposal}
+
+\begin{frame}{Google Search Trend of Fedora(The OS)}
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{Search_Fedora.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Google Search Trend of Linux}
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{Search_Linux.png}
+  \end{figure}
+\end{frame}
+
 \begin{frame}
-  \frametitle{Why Fedora.next?}
+  \begin{beamercolorbox}[center,ht=2ex,dp=0.5ex,rounded=true]{block body}
+    {\centering ``And more''}
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Call for Papers of LinuxCon}
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{cfp.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Meanwhile, out in the world}
   \begin{itemize}
     \item The world is changing:
       \begin{itemize}
-        \item Cloud! OpenStack! OpenShift!
-        \item Containers! Docker! CoreOS!
-        \item GitHub, Rubygem, NPM
+        \item 10 millions of repos in Github.
         \item Base OS considered boring
         \item Not just us: Debian, Ubuntu, openSUSE all \alert{no
           longer cool}
       \end{itemize}
   \end{itemize}
-  \begin{beamercolorbox}[center,ht=2ex,dp=0.5ex,rounded=true]{block body}
+  \begin{beamercolorbox}[center,ht=4ex,dp=0.5ex,rounded=true]{block body}
     {\centering ``Is distribution-level package management
-    obsolete?''}
+    obsolete?''\\ --Donnie Berkholz(Gentoo) @FOSDEM}
   \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}
+  \frametitle{The world is changing}
+  \begin{itemize}
+      \item Cloud, OpenStack, OpenShift!
+      \item EC2, GCE!
+      \item Containers! Docker! CoreOS!
+      \item Pip, Rubygem!
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{So what is Fedora.next?}
+  \begin{itemize}
+    \item Planning, direction-setting
+    \item Open to contributions
+    \item Incremental improvement
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Fedora's Mission}
@@ -210,11 +234,25 @@ breaklinks=false,
   \end{beamercolorbox}
 \end{frame}
 
-\begin{frame}{Fedora.next}
+\begin{frame}{Additive}
   \begin{itemize}
-    \item Additive
-    \item Incremental improvement
-    \item Planning, direction-setting
+    \item Current
+    \begin{itemize}
+      \item Pretty good job of making the base distro
+      \item Collection of packages is (mostly) high quality
+    \end{itemize}
+    \item So
+    \begin{itemize}
+      \item How can we do better
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Behind the scene}
+  \begin{itemize}
+    \item QA are busy, not enough time for tooling and reviewing
+    \item also other SIGs
+    \item Innovation vs change management
   \end{itemize}
 \end{frame}
 
@@ -222,10 +260,14 @@ breaklinks=false,
   \begin{columns}
     \begin{column}{.5\textwidth}
       \begin{itemize}
-	\item Ring 0: Minimal Core
-	\item Ring 1: Common Base Platform
-	\item Ring 2: Environments \& Stacks
-	\item Ring 3: Applications
+%	\item Ring 0: Minimal Core
+%	\item Ring 1: Common Base Platform
+%	\item Ring 2: Environments \& Stacks
+%	\item Ring 3: Applications
+  \item Ring 0: Just enough OS
+  \item Ring 1: Fedora Core
+  \item Ring 2: Environments \& Stacks
+  \item Ring 3: Applications
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
@@ -237,6 +279,99 @@ breaklinks=false,
   \end{columns}
 \end{frame}
 
+\begin{frame}{Why Ring Model}
+  \begin{itemize}
+    \item Innovation vs change management
+    \item Reduce barriers
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Ring 1: Fedora Core}
+  \begin{beamercolorbox}[center,ht=2ex,dp=0.5ex,rounded=true]{block body}
+    {\centering Wait, it is Fedora Core?}
+  \end{beamercolorbox}
+  \begin{itemize}
+    \item Yes.
+    \item But it is \alert{NOT} a return to the old Core + Extras model.
+    \item The new ``Fedora Core'' is a community project just like Fedora today
+    \item Most strict change manatement
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Ring 0: JeOS}
+  \begin{itemize}
+    \item Intentional focus on minimalism
+    \item Even stronger rules than Ring 1
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Ring 2: Environments \& Stacks}
+  \begin{itemize}
+    \item Why?
+    \begin{itemize}
+      \item People need a reliable base
+      \item ...but also flexiblility in areas relevant to their code
+      \begin{itemize}
+        \item Example: Tomcat 7 vs Tomcat 6
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{More details}
+  \begin{itemize}
+    \item Environments
+    \begin{itemize}
+      \item Desktop environments
+      \item Decoupled, like OpenShift Gears
+    \end{itemize}
+    \item Stacks
+    \begin{itemize}
+      \item Languages, databases,libraries
+      \item like OpenShift Cartridges
+    \end{itemize}
+  \end{itemize}
+  \begin{beamercolorbox}[center,ht=2ex,dp=0.5ex,rounded=true]{block body}
+    {\centering Ring 2 is SIG-centric}
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Ring 3: Apps}
+  \begin{itemize}
+    \item User level applications
+    \item More user based
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{What's the Ring?}
+  \begin{itemize}
+    \item Policy model, not an OS layer model
+    \item Separate policies may apply to each ring
+    \item Offer SIGs a way to replace the default expectations with their own
+    \item Within the Community policies to make them part of Fedora
+  \end{itemize}
+\end{frame}
+
+\section{Ongoing Work}
+
+\begin{frame}{Governance}
+  \begin{itemize}
+    \item Working groups:
+      \begin{itemize}
+        \item One each for the products
+        \item One for Base Design
+        \item One for Environments \& Stacks
+      \end{itemize}
+    \item Each working group: a group of voting members
+    \item FESCo, Design, QA, etc still there
+    \item FOSCo, replacement and extend of FAmSCo
+    \item Council, replacement and extend of Board
+  \end{itemize}
+\end{frame}
+
+\section{Fedora in the Cloud Era}
 \begin{frame}{Fedora Products Proposal}
   \begin{itemize}
     \item Fedora Workstation
@@ -259,25 +394,23 @@ breaklinks=false,
 
 \end{frame}
 
-\section{What's new in Fedora 21}
-\include{f21}
-
-\section{Ongoing Work}
-
-\begin{frame}{Governance}
+\begin{frame}{Cloud friendly}
   \begin{itemize}
-    \item Working groups:
-      \begin{itemize}
-        \item One each for the products
-        \item One for Base Design
-        \item One for Environments \& Stacks
-      \end{itemize}
-    \item Each working group: a group of voting members
-    \item FESCo, Design, QA, etc still there
-    \item FOSCo, replacement and extend of FAmSCo
-    \item Council, replacement and extend of Board
+    \item Images for the Cloud https://getfedora.org/cloud
+    \item Developer desktop
+    \item APIs, clients
   \end{itemize}
 \end{frame}
+
+\begin{frame}{Cloud Services on Fedora}
+  \begin{itemize}
+    \item IaaS: OpenStack
+    \item PaaS: OpenShift
+    \item SaaS: OwnCloud
+  \end{itemize}
+\end{frame}
+
+\section{How can I contribute}
 
 \begin{frame}{You Can Contribute!}
   \begin{itemize}
@@ -305,7 +438,7 @@ breaklinks=false,
   % Keep the summary *very short*.
   \begin{itemize}
   \item Fedora: Freedom, Friends, Features, First
-  \item Fedora.next: More Agile
+  \item Fedora.next: More Agile, cloud ready
   \item Join Fedora: Meet the community
   \end{itemize}
 \end{frame}
